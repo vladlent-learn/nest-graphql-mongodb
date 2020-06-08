@@ -11,7 +11,7 @@ export class LessonResolver {
   constructor(private lessonService: LessonService, private studentService: StudentService) {}
 
   @ResolveField()
-  async students(@Parent() lesson: Lesson) {
+  students(@Parent() lesson: Lesson) {
     return this.studentService.getManyStudents(lesson.students);
   }
 
